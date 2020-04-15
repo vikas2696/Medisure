@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>medisure</title>
+<!-- Include CSS File Here -->
+<link rel="stylesheet" href="css/main.css"/>
+<!-- Include JS File Here -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/patient_login.js"></script>
+
+</head>
+<body>
+<div class="limiter">
+    <div class="container-login100">
+
+      <div class="wrap-login100">
+        <div class="middle_el">
+          <span id = "doc_id" style="color: black"> 
+</span>
+        </div>
+
+        <div class="login100-pic js-tilt" data-tilt>
+          <img src="images/patient.png" alt="IMG">
+        </div>
+       
+
+<form class="login100-form validate-form" id="form_id" method="post" name="myform">
+
+          <span class="login100-form-title">
+           Patient's Login
+          </span>
+
+    <div class="wrap-input100 validate-input" data-validate = "Valid mobile number is required">
+    <input class="input100" type="text" name="username" id="mob_no" placeholder="Reg. Mobile no."/>
+    <span class="focus-input100"></span>
+            </div>
+
+    <input class="login100-form-btn" type="button" value="Generate OTP" id="generate_otp" onclick="generate()"/>
+
+    <div class="wrap-input100 validate-input" data-validate = "OTP is required">
+    <input class="input100" type="password" name="password" id="otp" placeholder="OTP" />
+    <span class="focus-input100"></span>
+          </div>
+
+    <input class="login100-form-btn" type="button" value="Login" id="submit" onclick="validate()"/>
+   <div style="text-align: center;">
+            
+    <a class="txt2" href="#" onclick="register_refer()">
+      New Patient? Register.
+      </a>
+      </div>
+</form>
+
+    </div>
+    </div>
+  </div>
+</body>
+</html>
