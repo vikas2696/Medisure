@@ -1,3 +1,19 @@
+//let http = require('C:/Users/Vikas Mehra/HealthRecord/node_modules/http/package.json');
+//import http from http;
+//console.log(__filename);
+//console.log(InputDataDecoder);
+//console.log(decoder);
+
+// const Nexmo = require('nexmo');
+ 
+// const nexmo = new Nexmo({
+//   apiKey: 'f4bd061d',
+//   apiSecret: 'NpSYpofEcjx1qO3C',
+// });
+
+const InputDataDecoder = require('ethereum-input-data-decoder');
+const abi = require('./abi.json');
+const decoder = new InputDataDecoder(abi);
 
 App = {
   web3Provider: null,
@@ -25,11 +41,12 @@ App = {
   },
 
   initContract: function() {
-    $.getJSON("Election.json", function(election) {
+    //const InputDataDecoder = require('ethereum-input-data-decoder');
+    $.getJSON("HealthRecord.json", function(healthRecord) {
       // Instantiate a new truffle contract from the artifact
-      App.contracts.Election = TruffleContract(election);
+      App.contracts.HealthRecord = TruffleContract(healthRecord);
       // Connect provider to interact with contract
-      App.contracts.Election.setProvider(App.web3Provider);
+      App.contracts.HealthRecord.setProvider(App.web3Provider);
 
       App.listenForEvents();
 
@@ -39,7 +56,7 @@ App = {
 
   // Listen for events emitted from the contract
   listenForEvents: function() {
-    App.contracts.Election.deployed().then(function(instance) {
+    App.contracts.HealthRecord.deployed().then(function(instance) {
       // Restart Chrome if you are unable to receive this event
       // This is a known issue with Metamask
       // https://github.com/MetaMask/metamask-extension/issues/2393
@@ -55,14 +72,11 @@ App = {
   },
 
   render: function() {
-    var electionInstance;
+    var healthRecordInstance;
     var loader = $("#loader");
     var content = $("#content");
 
-   // const InputDataDecoder = require('hex_decoder.js');
-   // const abi = require('abi.json');
-
-  //const decoder = new InputDataDecoder(abi);
+    //to decode input data
 
     loader.show();
     content.hide();
@@ -83,7 +97,7 @@ App = {
           diagnos_with_write.empty();
           var priority_write = $('#priority_write');
           priority_write.empty();
-
+          var count = 0;
           for (var i = 1; i <= block_count; i++) {
             web3.eth.getBlock(i, function (error, block) {
               if(!error) {
@@ -92,11 +106,15 @@ App = {
                     web3.eth.getTransaction(transaction, function(error, current_transaction) {
                       if(current_transaction.from == account && current_transaction.input != null) {
                         //console.log("Account1 data",current_transaction.input);
-                        var data = web3.toAscii(current_transaction.input);
-                        console.log("Account1: ",current_transaction.input);
+                        //var data = web3.toAscii(current_transaction.input);
+                        count++;
+                        const result = decoder.decodeData(current_transaction.input);
+                        console.log(result);
+                        //console.log("Account1: ",current_transaction.input);
                         //$("#accountAddress").html(current_transaction.input);
-                        var data_template = "<tr><th>" + new Date(block.timestamp * 1000).toGMTString() 
-                        + "</th><td>" + data + "</td><tr>"; 
+                        var data_template = "<tr><th>" + count 
+                        + "</th><td>"  + new Date(block.timestamp * 1000).toGMTString() 
+                        + "</th><td>" + result.inputs[0] + "</th><td>" + result.inputs[1] + "</td><tr>"; 
                         show_data.append(data_template);
                         loader.hide();
                         content.show();
@@ -173,15 +191,24 @@ App = {
   },
 
   addRecord: function() {
+    $("#save_button").hide();
     var diagnos_with = $('#diagnos_with_write').val();
     var priority = $('#priority_write').val();
 
-    App.contracts.Election.deployed().then(function(instance) {
+    App.contracts.HealthRecord.deployed().then(function(instance) {
       return instance.addRecord(diagnos_with,priority, { from: App.account});
     }).then(function(result) {
       // Wait for votes to update
-      $("#content").hide();
-      $("#loader").show();
+      // $("#content").hide();
+      // $("#loader").show();
+
+      // const from = 'MEDISURE';
+      // const to = '917065795486';
+      // const text = 'Transaction done! '+ 'Details : diagnos_with:'+diagnos_with+' priority:'+priority;
+
+      // nexmo.message.sendSms(from, to, text);
+
+      window.location.reload();
     }).catch(function(err) {
       console.error(err);
     });
@@ -190,6 +217,6 @@ App = {
 
 $(function() {
   $(window).load(function() {
-    App.init();
+    App.init(); 
   });
 });

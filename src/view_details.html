@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>medisure</title>
-
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css"/>
-
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -19,6 +18,7 @@
     <![endif]-->
     
   </head>
+  <h3 id="heading"></h3>
   <body>
    <p id="accountAddress"></p>
     <div class="container-login100">
@@ -31,8 +31,10 @@
             <table class="table">
               <thead>
                 <tr>
+                  <th scope="col">S. No.</th>
                   <th scope="col">Date & Time</th>
-                  <th scope="col">Data list</th>
+                  <th scope="col">diagnos_with</th>
+                  <th scope="col">priority</th>
                 </tr>
               </thead>
               <tbody id="show_data">
@@ -42,19 +44,19 @@
             <form onSubmit="App.addRecord(); return false;">
               
               <div class="form-group">
-                <label for="diagnos_with_write">Diagnos_with</label>
+                <label for="diagnos_with_write" id="label1">Diagnos_with</label>
                 <input class="input100" id="diagnos_with_write">
                 </input>
               </div>
 
               <div class="form-group">
-                <label for="priority_write">Priority</label>
+                <label for="priority_write" id="label2">Priority</label>
                 <input class="input100" id="priority_write">
                 </input>
               </div>
 
-              <button type="submit" class="btn btn-primary">Save Record</button>
-              <hr />
+              <button type="submit" class="btn btn-primary" id="save_button">Save Record</button>
+              <hr/>
             </form>
         </div>
       </div>
@@ -65,6 +67,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/view_deatils.js"></script>
+    <script src="js/bundle.js"></script>
+    <!-- <script src="js/app.js"></script> -->
+    
   </body>
 </html>

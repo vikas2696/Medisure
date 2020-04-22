@@ -1,0 +1,1157 @@
+{
+  "contractName": "HealthRecord",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "records",
+      "outputs": [
+        {
+          "name": "diagnos_with",
+          "type": "string"
+        },
+        {
+          "name": "priority",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "recordCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "voters",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_candidateId",
+          "type": "uint256"
+        }
+      ],
+      "name": "votedEvent",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "name": "_priority",
+          "type": "string"
+        }
+      ],
+      "name": "addRecord",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.25+commit.59dbf8f1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"records\",\"outputs\":[{\"name\":\"diagnos_with\",\"type\":\"string\"},{\"name\":\"priority\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"recordCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"voters\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_name\",\"type\":\"string\"},{\"name\":\"_priority\",\"type\":\"string\"}],\"name\":\"addRecord\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_candidateId\",\"type\":\"uint256\"}],\"name\":\"votedEvent\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Vikas Mehra/Healthrecord/contracts/HealthRecord.sol\":\"HealthRecord\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Vikas Mehra/Healthrecord/contracts/HealthRecord.sol\":{\"keccak256\":\"0x91ffdcb31bd98e230b4ef24b51319e967acb97a2958ed11eea68e2cf5e300150\",\"urls\":[\"bzzr://5ed55268f1e29b96c2ef3493c333e19f81d005b9f2ad9fe4703f43b86bda0a24\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610576806100206000396000f300608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633446106714610067578063900407bc14610179578063a3ec138d146101a4578063c9596248146101ff575b600080fd5b34801561007357600080fd5b50610092600480360381019080803590602001909291905050506102ae565b604051808060200180602001838103835285818151815260200191508051906020019080838360005b838110156100d65780820151818401526020810190506100bb565b50505050905090810190601f1680156101035780820380516001836020036101000a031916815260200191505b50838103825284818151815260200191508051906020019080838360005b8381101561013c578082015181840152602081019050610121565b50505050905090810190601f1680156101695780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561018557600080fd5b5061018e610402565b6040518082815260200191505060405180910390f35b3480156101b057600080fd5b506101e5600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610408565b604051808215151515815260200191505060405180910390f35b34801561020b57600080fd5b506102ac600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290505050610428565b005b6001602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561035a5780601f1061032f5761010080835404028352916020019161035a565b820191906000526020600020905b81548152906001019060200180831161033d57829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103f85780601f106103cd576101008083540402835291602001916103f8565b820191906000526020600020905b8154815290600101906020018083116103db57829003601f168201915b5050505050905082565b60025481565b60006020528060005260406000206000915054906101000a900460ff1681565b60026000815480929190600101919050555060408051908101604052808381526020018281525060016000600254815260200190815260200160002060008201518160000190805190602001906104809291906104a5565b50602082015181600101908051906020019061049d9291906104a5565b509050505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106104e657805160ff1916838001178555610514565b82800160010185558215610514579182015b828111156105135782518255916020019190600101906104f8565b5b5090506105219190610525565b5090565b61054791905b8082111561054357600081600090555060010161052b565b5090565b905600a165627a7a7230582088b120bb00855e39b61e79f1f972bcb70be13755763f28c11543df8d5c5198a70029",
+  "deployedBytecode": "0x608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633446106714610067578063900407bc14610179578063a3ec138d146101a4578063c9596248146101ff575b600080fd5b34801561007357600080fd5b50610092600480360381019080803590602001909291905050506102ae565b604051808060200180602001838103835285818151815260200191508051906020019080838360005b838110156100d65780820151818401526020810190506100bb565b50505050905090810190601f1680156101035780820380516001836020036101000a031916815260200191505b50838103825284818151815260200191508051906020019080838360005b8381101561013c578082015181840152602081019050610121565b50505050905090810190601f1680156101695780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561018557600080fd5b5061018e610402565b6040518082815260200191505060405180910390f35b3480156101b057600080fd5b506101e5600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610408565b604051808215151515815260200191505060405180910390f35b34801561020b57600080fd5b506102ac600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290505050610428565b005b6001602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561035a5780601f1061032f5761010080835404028352916020019161035a565b820191906000526020600020905b81548152906001019060200180831161033d57829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103f85780601f106103cd576101008083540402835291602001916103f8565b820191906000526020600020905b8154815290600101906020018083116103db57829003601f168201915b5050505050905082565b60025481565b60006020528060005260406000206000915054906101000a900460ff1681565b60026000815480929190600101919050555060408051908101604052808381526020018281525060016000600254815260200190815260200160002060008201518160000190805190602001906104809291906104a5565b50602082015181600101908051906020019061049d9291906104a5565b509050505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106104e657805160ff1916838001178555610514565b82800160010185558215610514579182015b828111156105135782518255916020019190600101906104f8565b5b5090506105219190610525565b5090565b61054791905b8082111561054357600081600090555060010161052b565b5090565b905600a165627a7a7230582088b120bb00855e39b61e79f1f972bcb70be13755763f28c11543df8d5c5198a70029",
+  "sourceMap": "26:597:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:597:0;;;;;;;",
+  "deployedSourceMap": "26:597:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;286:38;;8:9:-1;5:2;;;30:1;27;20:12;5:2;286:38:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;286:38:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;286:38:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;360:23;;8:9:-1;5:2;;;30:1;27;20:12;5:2;360:23:0;;;;;;;;;;;;;;;;;;;;;;;195:38;;8:9:-1;5:2;;;30:1;27;20:12;5:2;195:38:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;473:148;;8:9:-1;5:2;;;30:1;27;20:12;5:2;473:148:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;286:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;360:23::-;;;;:::o;195:38::-;;;;;;;;;;;;;;;;;;;;;;:::o;473:148::-;542:11;;:14;;;;;;;;;;;;;589:24;;;;;;;;;596:5;589:24;;;;603:9;589:24;;;566:7;:20;574:11;;566:20;;;;;;;;;;;:47;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;473:148;;:::o;26:597::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.25;\n\ncontract HealthRecord {\n    // Model a record\n    struct Record {\n        string diagnos_with;\n        string priority;\n    }\n\n    // Store accounts that have voted\n    mapping(address => bool) public voters;\n    // Store Candidates\n    // Fetch Candidate\n    mapping(uint => Record) public records;\n    // Store Candidates Count\n    uint public recordCount;\n\n    //voted event\n    event votedEvent (\n        uint indexed _candidateId\n    );\n\n    function addRecord (string _name, string _priority) public {\n        recordCount ++;\n        records[recordCount] = Record(_name, _priority);\n\n    }\n}\n",
+  "sourcePath": "C:/Users/Vikas Mehra/Healthrecord/contracts/HealthRecord.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Vikas Mehra/Healthrecord/contracts/HealthRecord.sol",
+    "exportedSymbols": {
+      "HealthRecord": [
+        41
+      ]
+    },
+    "id": 42,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".25"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 41,
+        "linearizedBaseContracts": [
+          41
+        ],
+        "name": "HealthRecord",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "HealthRecord.Record",
+            "id": 6,
+            "members": [
+              {
+                "constant": false,
+                "id": 3,
+                "name": "diagnos_with",
+                "nodeType": "VariableDeclaration",
+                "scope": 6,
+                "src": "100:19:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "100:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5,
+                "name": "priority",
+                "nodeType": "VariableDeclaration",
+                "scope": 6,
+                "src": "129:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "129:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Record",
+            "nodeType": "StructDefinition",
+            "scope": 41,
+            "src": "76:75:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10,
+            "name": "voters",
+            "nodeType": "VariableDeclaration",
+            "scope": 41,
+            "src": "195:38:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 9,
+              "keyType": {
+                "id": 7,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "203:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "195:24:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 8,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "214:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14,
+            "name": "records",
+            "nodeType": "VariableDeclaration",
+            "scope": 41,
+            "src": "286:38:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Record_$6_storage_$",
+              "typeString": "mapping(uint256 => struct HealthRecord.Record)"
+            },
+            "typeName": {
+              "id": 13,
+              "keyType": {
+                "id": 11,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "294:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "286:23:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Record_$6_storage_$",
+                "typeString": "mapping(uint256 => struct HealthRecord.Record)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 12,
+                "name": "Record",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 6,
+                "src": "302:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Record_$6_storage_ptr",
+                  "typeString": "struct HealthRecord.Record"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 16,
+            "name": "recordCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 41,
+            "src": "360:23:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 15,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "360:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 20,
+            "name": "votedEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 19,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18,
+                  "indexed": true,
+                  "name": "_candidateId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20,
+                  "src": "435:25:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "435:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "425:41:0"
+            },
+            "src": "408:59:0"
+          },
+          {
+            "body": {
+              "id": 39,
+              "nodeType": "Block",
+              "src": "532:89:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 28,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "542:14:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 27,
+                      "name": "recordCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 16,
+                      "src": "542:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 29,
+                  "nodeType": "ExpressionStatement",
+                  "src": "542:14:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 37,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 30,
+                        "name": "records",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14,
+                        "src": "566:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Record_$6_storage_$",
+                          "typeString": "mapping(uint256 => struct HealthRecord.Record storage ref)"
+                        }
+                      },
+                      "id": 32,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 31,
+                        "name": "recordCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 16,
+                        "src": "574:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "566:20:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Record_$6_storage",
+                        "typeString": "struct HealthRecord.Record storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 34,
+                          "name": "_name",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 22,
+                          "src": "596:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 35,
+                          "name": "_priority",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 24,
+                          "src": "603:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        ],
+                        "id": 33,
+                        "name": "Record",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6,
+                        "src": "589:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Record_$6_storage_ptr_$",
+                          "typeString": "type(struct HealthRecord.Record storage pointer)"
+                        }
+                      },
+                      "id": 36,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "589:24:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Record_$6_memory",
+                        "typeString": "struct HealthRecord.Record memory"
+                      }
+                    },
+                    "src": "566:47:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Record_$6_storage",
+                      "typeString": "struct HealthRecord.Record storage ref"
+                    }
+                  },
+                  "id": 38,
+                  "nodeType": "ExpressionStatement",
+                  "src": "566:47:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 40,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "addRecord",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 25,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 22,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 40,
+                  "src": "493:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 21,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "493:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 24,
+                  "name": "_priority",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 40,
+                  "src": "507:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 23,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "507:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "492:32:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 26,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "532:0:0"
+            },
+            "scope": 41,
+            "src": "473:148:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 42,
+        "src": "26:597:0"
+      }
+    ],
+    "src": "0:624:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Vikas Mehra/Healthrecord/contracts/HealthRecord.sol",
+    "exportedSymbols": {
+      "HealthRecord": [
+        41
+      ]
+    },
+    "id": 42,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".25"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 41,
+        "linearizedBaseContracts": [
+          41
+        ],
+        "name": "HealthRecord",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "HealthRecord.Record",
+            "id": 6,
+            "members": [
+              {
+                "constant": false,
+                "id": 3,
+                "name": "diagnos_with",
+                "nodeType": "VariableDeclaration",
+                "scope": 6,
+                "src": "100:19:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "100:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5,
+                "name": "priority",
+                "nodeType": "VariableDeclaration",
+                "scope": 6,
+                "src": "129:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "129:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Record",
+            "nodeType": "StructDefinition",
+            "scope": 41,
+            "src": "76:75:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10,
+            "name": "voters",
+            "nodeType": "VariableDeclaration",
+            "scope": 41,
+            "src": "195:38:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 9,
+              "keyType": {
+                "id": 7,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "203:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "195:24:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 8,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "214:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14,
+            "name": "records",
+            "nodeType": "VariableDeclaration",
+            "scope": 41,
+            "src": "286:38:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Record_$6_storage_$",
+              "typeString": "mapping(uint256 => struct HealthRecord.Record)"
+            },
+            "typeName": {
+              "id": 13,
+              "keyType": {
+                "id": 11,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "294:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "286:23:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Record_$6_storage_$",
+                "typeString": "mapping(uint256 => struct HealthRecord.Record)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 12,
+                "name": "Record",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 6,
+                "src": "302:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Record_$6_storage_ptr",
+                  "typeString": "struct HealthRecord.Record"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 16,
+            "name": "recordCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 41,
+            "src": "360:23:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 15,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "360:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 20,
+            "name": "votedEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 19,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18,
+                  "indexed": true,
+                  "name": "_candidateId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20,
+                  "src": "435:25:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "435:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "425:41:0"
+            },
+            "src": "408:59:0"
+          },
+          {
+            "body": {
+              "id": 39,
+              "nodeType": "Block",
+              "src": "532:89:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 28,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "542:14:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 27,
+                      "name": "recordCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 16,
+                      "src": "542:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 29,
+                  "nodeType": "ExpressionStatement",
+                  "src": "542:14:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 37,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 30,
+                        "name": "records",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14,
+                        "src": "566:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Record_$6_storage_$",
+                          "typeString": "mapping(uint256 => struct HealthRecord.Record storage ref)"
+                        }
+                      },
+                      "id": 32,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 31,
+                        "name": "recordCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 16,
+                        "src": "574:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "566:20:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Record_$6_storage",
+                        "typeString": "struct HealthRecord.Record storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 34,
+                          "name": "_name",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 22,
+                          "src": "596:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 35,
+                          "name": "_priority",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 24,
+                          "src": "603:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        ],
+                        "id": 33,
+                        "name": "Record",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6,
+                        "src": "589:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Record_$6_storage_ptr_$",
+                          "typeString": "type(struct HealthRecord.Record storage pointer)"
+                        }
+                      },
+                      "id": 36,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "589:24:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Record_$6_memory",
+                        "typeString": "struct HealthRecord.Record memory"
+                      }
+                    },
+                    "src": "566:47:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Record_$6_storage",
+                      "typeString": "struct HealthRecord.Record storage ref"
+                    }
+                  },
+                  "id": 38,
+                  "nodeType": "ExpressionStatement",
+                  "src": "566:47:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 40,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "addRecord",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 25,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 22,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 40,
+                  "src": "493:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 21,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "493:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 24,
+                  "name": "_priority",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 40,
+                  "src": "507:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 23,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "507:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "492:32:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 26,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "532:0:0"
+            },
+            "scope": 41,
+            "src": "473:148:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 42,
+        "src": "26:597:0"
+      }
+    ],
+    "src": "0:624:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.25+commit.59dbf8f1.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {
+        "0xfff3c900d938d21d0990d786e819f29b8d05c1ef587b462b939609625b684b16": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "_candidateId",
+              "type": "uint256"
+            }
+          ],
+          "name": "votedEvent",
+          "type": "event",
+          "signature": "0xfff3c900d938d21d0990d786e819f29b8d05c1ef587b462b939609625b684b16"
+        }
+      },
+      "links": {},
+      "address": "0xf1DB592F93BdF4163fdC8Befbf1414CC29D9E9c9",
+      "transactionHash": "0xc8b7dd98e55db37104d5d247162de6b33920fdd7ae93fb76de6f4f09dae6fc67"
+    }
+  },
+  "schemaVersion": "3.0.22",
+  "updatedAt": "2020-04-22T12:44:26.541Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -1,11 +1,18 @@
 
 
 function validate(){
- var id = document.getElementById("id").value;
-	  var password = document.getElementById("password").value;
+    var id = document.getElementById("id").value;
+    var password = document.getElementById("password").value;
 
      if(id == "d1" && password == "123") {
+        localStorage.setItem("type", "d1");
+         window.location = "patient_login.html"; // Redirecting to other page.
+            return false;
+     }
+ }
 
+function patient_view(){
+        localStorage.setItem("type", "Patient");
          window.location = "patient_login.html"; // Redirecting to other page.
             return false;
      }
@@ -29,5 +36,3 @@ function validate(){
     //      	}  
     //         }
     //   });  
-   
-}

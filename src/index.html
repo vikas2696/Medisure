@@ -4,8 +4,8 @@
 <!-- Include CSS File Here -->
 <link rel="stylesheet" href="css/main.css"/>
 <!-- Include JS File Here -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="js/doctor_signin.js"></script>
+<!-- <script data src="require.js"></script> -->
+<script src="/js/doctor_signin.js"></script>
 
 </head>
 <body>
@@ -14,10 +14,10 @@
       <div class="wrap-login100">
 
         <div class="login100-pic js-tilt" data-tilt>
-          <img src="images/doctor.png" alt="IMG">
+          <img src="doctor.png" alt="IMG">
         </div>
 
-<form class="login100-form validate-form" id="form_id" method="post" name="myform">
+<form class="login100-form validate-form" id="form_id" method="POST" action="auth" name="myform">
 
           <span class="login100-form-title">
             Doctor's Login
@@ -39,7 +39,13 @@
             </span>
           </div>
 
-    <input class="login100-form-btn" type="button" value="Login" id="submit" onclick="validate()"/>
+    <input class="login100-form-btn" type="submit" value="Login" id="submit"/>
+    <div style="text-align: center;">
+            
+    <a class="txt2" href="#" onclick="patient_view()">
+      Login as Patient.
+      </a>
+      </div>
 
 </form>
 
