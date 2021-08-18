@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>medisure</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +14,7 @@
     <![endif]-->
     
   </head>
-  <h3 id="heading"></h3>
+  <h5 id="heading"></h5>
   <body>
    <p id="accountAddress"></p>
     <div class="container-login100">
@@ -28,6 +24,12 @@
           <div id="loader">
             <p class="text-center">Refresh to see updated...</p>
           </div>
+          
+          <span class="login100-form-title" id = "view_name">
+          </span>
+          <span class="login100-form-title" id = "view_id">
+          </span>
+
             <table class="table">
               <thead>
                 <tr>
@@ -35,13 +37,16 @@
                   <th scope="col">Date & Time</th>
                   <th scope="col">diagnos_with</th>
                   <th scope="col">priority</th>
+                  <th scope="col">doctor_id</th>
+                  <th scope="col">confirmation_id</th>
                 </tr>
               </thead>
               <tbody id="show_data">
               </tbody>
             </table>
             <hr/>
-            <form onSubmit="App.addRecord(); return false;">
+            <!-- <form onSubmit="App.addRecord(); return false;"> -->
+              <form onSubmit="App.addRecord(); return false;">
               
               <div class="form-group">
                 <label for="diagnos_with_write" id="label1">Diagnos_with</label>
@@ -55,8 +60,27 @@
                 </input>
               </div>
 
+              <div class="form-group">
+                <label for="priority_write" id="label3">Confirmation id</label>
+                <input class="input100" id="confirm_id">
+                </input>
+              </div>
+
               <button type="submit" class="btn btn-primary" id="save_button">Save Record</button>
-              <hr/>
+              <hr />
+            </form>
+             
+              <form onSubmit="App.check(); return false;">
+              <button type="submit" class="btn btn-primary" id="check_button" >Check</button>
+            </form>
+            <form method="post" action="send">
+              <button type="submit" class="btn btn-primary" id="notify_button">Notify the patient</button>
+            </form>
+            <form method="post" action="logout">
+              <button type="submit" class="btn btn-primary" id="logout_button">Logout</button>
+            </form>
+            <form method="post" action="confirmation">
+              <button type="submit" class="btn btn-primary" id="confirm_button">Ask for Confirmation</button>
             </form>
         </div>
       </div>

@@ -10,27 +10,27 @@ else
 
 });
 
-function generate(){
+// function generate(){
 
-var username = document.getElementById("mob_no").value;
-if ( username == "123") {
-   alert ("OTP sent");
-}
+// var username = document.getElementById("mob_no").value;
+// if ( username == "123") {
+//    alert ("OTP sent");
+// }
 
-else{
-   alert("Not a registered mobile number");
-}
+// else{
+//    alert("Not a registered mobile number");
+// }
 
-}
+// }
 
-function validate(){
-var username = document.getElementById("mob_no").value;
-var password = document.getElementById("otp").value;
- if(username == "123" && password == "123") {
-        localStorage.setItem("type", type);
-         window.location = "view_details.html"; // Redirecting to other page.
-            return false;
-     }
+// function validate(){
+// var username = document.getElementById("mob_no").value;
+// var password = document.getElementById("otp").value;
+//  if(username == "123" && password == "123") {
+//         localStorage.setItem("type", type);
+//          window.location = "view_details.html"; // Redirecting to other page.
+//             return false;
+//      }
 
 // $.ajax({  
 //          type:"POST",  
@@ -54,7 +54,7 @@ var password = document.getElementById("otp").value;
 
 
 
-}
+//}
 
 function register_refer(){
 

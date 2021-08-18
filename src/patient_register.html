@@ -17,7 +17,7 @@
                     <h2 class="title" id="check">Patient Registration Form</h2>
                 </div>
                 <div class="card-body">
-                    <form onSubmit="Patient.addAccount(); return false;">
+                    <form method="post" action="reg">
                         <div class="form-row m-b-55">
                             <div class="name">Name</div>
                             <div class="value">
@@ -82,15 +82,6 @@
                                             <label class="label--desc">Phone Number</label>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Past Medical History</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input type="checkbox" name="disease" value="asthama">asthama<br>
-                                    <input type="checkbox" name="disease" value="thyroid">thyroid<br>
                                 </div>
                             </div>
                         </div>

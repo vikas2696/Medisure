@@ -1,18 +1,16 @@
-pragma solidity ^0.4.25;
+pragma solidity >=0.4.21 <0.7.0;
 
 contract HealthRecord {
     // Model a record
     struct Record {
         string diagnos_with;
-        string priority;
+        uint priority;
+        string doctor_id;
+        string confirm_id;
     }
 
-    // Store accounts that have voted
-    mapping(address => bool) public voters;
-    // Store Candidates
-    // Fetch Candidate
     mapping(uint => Record) public records;
-    // Store Candidates Count
+   
     uint public recordCount;
 
     //voted event
@@ -20,9 +18,9 @@ contract HealthRecord {
         uint indexed _candidateId
     );
 
-    function addRecord (string _name, string _priority) public {
+    function addRecord (string memory _name, uint _priority, string memory _doctor_id, string memory _confirm_id) public {
         recordCount ++;
-        records[recordCount] = Record(_name, _priority);
+        records[recordCount] = Record(_name, _priority, _doctor_id, _confirm_id);
 
     }
 }

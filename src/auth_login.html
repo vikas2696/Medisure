@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="css/main.css"/>
 <!-- Include JS File Here -->
 <!-- <script data src="require.js"></script> -->
-<script src="js/doctor_signin.js"></script>
 
 </head>
 <body>
@@ -14,17 +13,17 @@
       <div class="wrap-login100">
 
         <div class="login100-pic js-tilt" data-tilt>
-          <img src="images/doctor.png" alt="IMG">
+          <img src="images/security.png" alt="IMG">
         </div>
 
-<form class="login100-form validate-form" id="form_id" method="post" action="auth" name="myform">
+<form class="login100-form validate-form" id="form_id" method="post" action="auth_login" name="myform">
 
           <span class="login100-form-title">
-            Doctor's Login
+            Insurance agent Login
           </span>
 
     <div class="wrap-input100 validate-input" data-validate = "Valid id is required">
-    <input class="input100" type="text" name="username" id="id" placeholder="Doctor's Id"/>
+    <input class="input100" type="text" name="auth_id" id="id" placeholder="Id"/>
     <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -39,18 +38,14 @@
             </span>
           </div>
 
-    <input class="login100-form-btn" type="submit" value="Login" id="submit" onclick="validate()" />
+
+    <input class="login100-form-btn" type="submit" value="Login" id="submit" />
     <div style="text-align: center;">
             
-    <a class="txt2" href="#" onclick="patient_view()">
+   <!--  <a class="txt2" href="#" onclick="patient_view()">
       Login as Patient.
       </a>
-      </div>
-      <div style="text-align: center;"> 
-      <a class="txt2" href="#" onclick="auth_view()">
-       Insurance agent login.
-      </a>
-      </div>
+      </div> -->
 
 </form>
 
